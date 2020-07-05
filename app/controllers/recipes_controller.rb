@@ -5,18 +5,19 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
-    2.times do 
-      @recipe.ingredients.build
   end
 
   def new
     @recipe = Recipe.new
+    2.times do 
+      @recipe.ingredients.build
+    end
   end
 
   def create
     @recipe = Recipe.create(recipe_params)
   end
-  
+
   private
     
   def recipe_params
